@@ -1,0 +1,46 @@
+﻿#!/bin/bash
+
+if [ -d ~/jack_mixer ]
+then
+    rm -rf ~/jack_mixer
+fi
+
+if [ -f ~/jack-mixer_*.deb ] ; then
+    rm ~/jack-mixer_*.deb
+fi
+
+cd ~
+
+git clone -b deb-build --single-branch git@github.com:ignotus666/jack_mixer.git
+
+cd ~/jack_mixer
+
+  if sed -i -e \
+     's|import sys$|import sys, sysconfig\nsys.path.insert(0, sysconfig.get_path("purelib"))|' \
+     jack_mixer/__main__.py ; then
+      echo "Edited the jack_mixer start script to let it find the jack_mixer module"
+  else
+      echo "Couldn't edit the jack_mixer start script to let it find the jack_mixer module"
+  fi
+
+dh_make --createorig -p jack-mixer_17
+
+dh_auto_configure --buildsystem=meson
+
+dpkg-buildpackage -rfakeroot -us -uc -b
+
+cd ~
+
+rm jack-mixer_*.tar.xz
+rm jack-mixer_*amd64.buildinfo
+rm jack-mixer_*amd64.changes
+rm jack-mixer-dbgsym_*.ddeb
+
+sudo dpkg -i /home/daryl/jack-mixer_*.deb
+
+if [ -d ~/jack_mixer ]
+then
+    rm -rf ~/jack_mixer
+fi
+
+#dialog --title "Jack-Mixer installation" --msgbox "Jack-Mixer installed!" 0 0

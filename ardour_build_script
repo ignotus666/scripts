@@ -1,0 +1,19 @@
+﻿#!/bin/sh
+
+
+if [ -d /home/daryl/ardour ]
+then
+    rm -rf ardour
+fi
+
+cd ~
+
+git clone git://github.com/Ardour/ardour
+
+cd ardour
+
+./waf configure --optimize
+
+./waf
+
+sudo ./waf install

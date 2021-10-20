@@ -1,0 +1,22 @@
+﻿#!/bin/bash
+
+cd ~
+
+cp -r /home/daryl/debian jamulus/
+
+# cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
+
+cp /home/daryl/jamulus/debian/jamulus-server.service ~/jamulus/distributions/
+
+cd jamulus
+
+fakeroot dpkg-buildpackage -B
+
+cd ~
+
+rm jamulus_*.buildinfo
+rm jamulus_*.changes
+
+sudo dpkg -i /home/daryl/jamulus_*.deb
+
+dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0

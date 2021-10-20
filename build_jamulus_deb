@@ -1,0 +1,37 @@
+﻿#!/bin/bash
+
+if [ -d /home/daryl/jamulus ]
+then
+    rm -rf jamulus
+fi
+
+if [ -f /home/daryl/jamulus_*.deb ]
+then
+    rm jamulus_*.deb
+fi
+
+cd ~
+
+wait 4
+
+#git clone https://github.com/corrados/jamulus.git &&
+git clone https://github.com/ignotus666/jamulus.git
+
+cp -r ~/debian jamulus/
+
+cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
+
+cp /home/daryl/jamulus/debian/jamulus-server.service ~/jamulus/distributions/
+
+cd jamulus
+
+fakeroot dpkg-buildpackage -B
+
+cd ~
+
+rm jamulus_*.buildinfo
+rm jamulus_*.changes
+
+sudo dpkg -i /home/daryl/jamulus_*.deb
+
+dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0

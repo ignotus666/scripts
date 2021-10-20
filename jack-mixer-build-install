@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+
+spawn ~/scripts/jack-mixer-deb-build
+expect "s/i/l/p"
+send "s"
+expect "Are the details correct?"
+send "y"
+expect "password for daryl"
+send "sui\n"
+expect eof
