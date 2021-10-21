@@ -1,0 +1,5 @@
+﻿#!/bin/sh
+
+cd ~/cosas_mias/eDrum_Megadrum/Megadrum
+
+gpg step.mp4.gpg

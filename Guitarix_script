@@ -1,0 +1,10 @@
+﻿#!/bin/sh
+
+/usr/bin/qjackctl --preset=Guitarix &
+
+sleep 4
+
+guitarix  &
+
+
+/usr/bin/slgui --load-session=/home/daryl/pedalboard.slsess

@@ -1,0 +1,18 @@
+﻿#!/bin/sh
+
+/usr/bin/qjackctl --preset=Guitar --active-patchbay=/home/daryl/jack_patchbays/guitar_eq.xml &
+
+sleep 2
+
+env WINEPREFIX="/home/daryl/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Overloud\\TH-U\\TH-U-64.exe &
+
+carla /home/daryl/carla_projects/guitar_THU.carxp &
+
+slgui --load-session=/home/daryl/pedalboard.slsess &
+
+jack_mixer --config=/home/daryl/jack_mixer_configs/Guitar &
+
+#sleep 5
+
+#jack_disconnect TH-U-64:out_1 system:playback_1 &
+#jack_disconnect TH-U-64:out_2 system:playback_2

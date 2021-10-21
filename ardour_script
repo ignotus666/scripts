@@ -1,0 +1,7 @@
+﻿#!/bin/sh
+
+/usr/bin/qjackctl --preset=ardour &
+
+sleep 4
+
+ardour6

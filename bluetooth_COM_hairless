@@ -1,0 +1,9 @@
+﻿#!/bin/sh
+
+sudo rfcomm connect /dev/rfcomm0 00:18:E4:00:40:31 1 &
+
+cd /home/daryl/Desktop/hairless 
+
+sudo /home/daryl/Desktop/hairless/hairless-midiserial
+
+/bin/bash

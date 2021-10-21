@@ -1,0 +1,18 @@
+﻿#!/bin/sh
+
+/usr/bin/qjackctl --preset=conference_setup --active-patchbay=/home/daryl/jack_patchbays/conference_patchbay.xml &
+
+sleep 2
+
+jack_mixer --config=/home/daryl/jack_mixer_configs/conference &
+
+
+sleep 3
+
+jack_disconnect 'PulseAudio JACK Sink: front-left' system:playback_1
+jack_disconnect 'PulseAudio JACK Sink: front-left' system:playback_2
+jack_disconnect system:capture_1 system:playback_1
+jack_disconnect system:capture_2 system:playback_2
+sleep 3
+
+alsa_in -d hw:Generic

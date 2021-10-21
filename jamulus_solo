@@ -1,0 +1,11 @@
+﻿#!/bin/sh
+
+/usr/bin/qjackctl --preset=Jamulus --active-patchbay=/home/daryl/jack_patchbays/Jamulus+TH-U.xml &
+
+sleep 5
+
+jamulus -s -F -6 &
+
+sleep 2
+
+jamulus -6 --ctrlmidich "1;30" &
