@@ -1,11 +1,11 @@
 ﻿#!/bin/bash
 
-if [ -d /home/daryl/jamulus ]
+if [ -d ~/jamulus ]
 then
     rm -rf jamulus
 fi
 
-if [ -f /home/daryl/jamulus_*.deb ]
+if [ -f ~/jamulus_*.deb ]
 then
     rm jamulus_*.deb
 fi
@@ -20,7 +20,7 @@ cp -r ~/debian jamulus/
 
 cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
 
-cp /home/daryl/jamulus/debian/jamulus-server.service ~/jamulus/distributions/
+cp ~/jamulus/debian/jamulus-server.service ~/jamulus/distributions/
 
 cd jamulus
 
@@ -31,6 +31,6 @@ cd ~
 rm jamulus_*.buildinfo
 rm jamulus_*.changes
 
-sudo dpkg -i /home/daryl/jamulus_*.deb
+sudo dpkg -i ~/jamulus_*.deb
 
 dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0

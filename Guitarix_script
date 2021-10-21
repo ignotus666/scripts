@@ -7,4 +7,4 @@ sleep 4
 guitarix  &
 
 
-/usr/bin/slgui --load-session=/home/daryl/pedalboard.slsess
+/usr/bin/slgui --load-session=~/pedalboard.slsess

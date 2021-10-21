@@ -1,10 +1,10 @@
 ﻿#!/bin/sh
 
-/usr/bin/qjackctl --preset=conference_setup --active-patchbay=/home/daryl/jack_patchbays/conference_patchbay.xml &
+/usr/bin/qjackctl --preset=conference_setup --active-patchbay=~/jack_patchbays/conference_patchbay.xml &
 
 sleep 2
 
-jack_mixer --config=/home/daryl/jack_mixer_configs/conference &
+jack_mixer --config=~/jack_mixer_configs/conference &
 
 
 sleep 3

@@ -1,8 +1,8 @@
 ﻿#!/bin/sh
 
-/usr/bin/qjackctl --preset=superior_drummer_eq --active-patchbay=/home/daryl/jack_patchbays/jamulus+superior_eq.xml &
+/usr/bin/qjackctl --preset=superior_drummer_eq --active-patchbay=$HOME/jack_patchbays/jamulus+superior_eq.xml &
 
-env WINEPREFIX="/home/daryl/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Toontrack\\Superior\ Drummer\\Superior\ Drummer\ 3.exe &
+env WINEPREFIX="$HOME/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Toontrack\\Superior\ Drummer\\Superior\ Drummer\ 3.exe &
 
 sleep 2
 
@@ -14,9 +14,9 @@ jamulus --ctrlmidich '1;f30*10;p80*10;s2*3;m5*3' &
 
 #sleep 2
 
-jack_mixer --config=/home/daryl/jack_mixer_configs/superior &
+jack_mixer --config=$HOME/jack_mixer_configs/superior &
 
-carla /home/daryl/carla_projects/superior_drummer_3.carxp &
+carla $HOME/carla_projects/superior_drummer_3.carxp &
 
 sleep 40
 

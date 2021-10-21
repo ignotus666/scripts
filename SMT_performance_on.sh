@@ -6,6 +6,6 @@ then
 
         if ! pgrep -x VirtualBoxVM >/dev/null
         then
-        sudo '/home/daryl/scripts/smt-manager.pl' --offline
+        sudo '~/scripts/smt-manager.pl' --offline
         fi
 fi

@@ -1,3 +1,0 @@
-in root folder:
-
-clang-format -i -style=file ./path/file

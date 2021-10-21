@@ -23,7 +23,7 @@ dpkg-deb --build ~/sooperlooper
 
 cd ~
 
-sudo dpkg -i /home/daryl/sooperlooper.deb
+sudo dpkg -i ~/sooperlooper.deb
 
 if [ -d ~/sooperlooper ]
 then

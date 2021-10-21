@@ -1,16 +1,16 @@
 ﻿#!/bin/sh
 
-/usr/bin/qjackctl --preset=Guitar --active-patchbay=/home/daryl/jack_patchbays/guitar_eq.xml &
+/usr/bin/qjackctl --preset=Guitar --active-patchbay=$HOME/jack_patchbays/guitar_eq.xml &
 
 sleep 2
 
-env WINEPREFIX="/home/daryl/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Overloud\\TH-U\\TH-U-64.exe &
+env WINEPREFIX="$HOME/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Overloud\\TH-U\\TH-U-64.exe &
 
-carla /home/daryl/carla_projects/guitar_THU.carxp &
+carla $HOME/carla_projects/guitar_THU.carxp &
 
-slgui --load-session=/home/daryl/pedalboard.slsess &
+slgui --load-session=$HOME/pedalboard.slsess &
 
-jack_mixer --config=/home/daryl/jack_mixer_configs/Guitar &
+jack_mixer --config=$HOME/jack_mixer_configs/Guitar &
 
 #sleep 5
 

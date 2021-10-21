@@ -1,11 +1,11 @@
 ﻿#!/bin/sh
 
-if [ -d /home/daryl/jamulus ]
+if [ -d ~/jamulus ]
 then
     rm -rf jamulus
 fi
 
-cd ~ 
+cd ~
 
 #git clone https://github.com/corrados/jamulus.git &&
 git clone https://github.com/ignotus666/jamulus.git

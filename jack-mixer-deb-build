@@ -36,7 +36,7 @@ rm jack-mixer_*amd64.buildinfo
 rm jack-mixer_*amd64.changes
 rm jack-mixer-dbgsym_*.ddeb
 
-sudo dpkg -i /home/daryl/jack-mixer_*.deb
+sudo dpkg -i ~/jack-mixer_*.deb
 
 if [ -d ~/jack_mixer ]
 then

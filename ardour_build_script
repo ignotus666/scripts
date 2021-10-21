@@ -1,7 +1,7 @@
 ﻿#!/bin/sh
 
 
-if [ -d /home/daryl/ardour ]
+if [ -d ~/ardour ]
 then
     rm -rf ardour
 fi

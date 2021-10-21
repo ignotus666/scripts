@@ -1,6 +1,6 @@
 ﻿#!/bin/sh
 
-/usr/bin/qjackctl --preset=Jamulus --active-patchbay=/home/daryl/jack_patchbays/Jamulus+TH-U.xml &
+/usr/bin/qjackctl --preset=Jamulus --active-patchbay=$HOME/jack_patchbays/Jamulus+TH-U.xml &
 
 sleep 5
 
@@ -12,10 +12,10 @@ jamulus --ctrlmidich "1;70" &
 
 sleep 2
 
-env WINEPREFIX="/home/daryl/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Overloud\\TH-U\\TH-U-64.exe  &
+env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Overloud\\TH-U\\TH-U-64.exe  &
 
 
-jack_mixer --config=/home/daryl/jack_mixer_configs/Guitar &
+jack_mixer --config=$HOME/jack_mixer_configs/Guitar &
 
 sleep 15
 
@@ -23,4 +23,3 @@ jack_disconnect TH-U-64:out_1 system:playback_1
 jack_disconnect TH-U-64:out_2 system:playback_2
 jack_disconnect system:capture_1 'Jamulus:input left'
 jack_disconnect system:capture_2 'Jamulus:input right'
-
