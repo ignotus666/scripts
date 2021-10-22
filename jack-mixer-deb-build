@@ -43,4 +43,5 @@ then
     rm -rf ~/jack_mixer
 fi
 
-#dialog --title "Jack-Mixer installation" --msgbox "Jack-Mixer installed!" 0 0
+echo ''
+echo "Jack-Mixer installed!"
