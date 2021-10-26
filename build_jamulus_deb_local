@@ -1,22 +1,14 @@
 ﻿#!/bin/bash
 
-cd ~
+cd $HOME/jamulus/distributions/
 
-cp -r ~/debian jamulus/
+$HOME/jamulus/distributions/build-debian-package-auto.sh
 
-cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
+rm $HOME/jamulus_*.buildinfo
+rm $HOME/jamulus_*.changes
+rm $HOME/jamulus-headless_*.deb
+rm $HOME/jamulus_*.build
 
-cp ~/jamulus/debian/jamulus-server.service ~/jamulus/distributions/
-
-cd jamulus
-
-fakeroot dpkg-buildpackage -B
-
-cd ~
-
-rm jamulus_*.buildinfo
-rm jamulus_*.changes
-
-sudo dpkg -i ~/jamulus_*.deb
+sudo dpkg -i $HOME/jamulus_*.deb
 
 dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0

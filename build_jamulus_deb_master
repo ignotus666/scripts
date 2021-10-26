@@ -1,36 +1,32 @@
 ﻿#!/bin/bash
 
-if [ -d ~/jamulus ]
+if [ -d $HOME/jamulus ]
 then
-    rm -rf jamulus
+    rm -rf $HOME/jamulus
 fi
 
-if [ -f ~/jamulus_*.deb ]
+if [ -f $HOME/jamulus_*.deb ]
 then
-    rm jamulus_*.deb
+    rm $HOME/jamulus_*.deb
 fi
 
-cd ~
+cd $HOME
 
 wait 4
 
 git clone https://github.com/jamulussoftware/jamulus.git
 
-cp -r ~/debian jamulus/
-
 cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
 
-cp ~/jamulus/debian/jamulus-server.service ~/jamulus/distributions/
+cd $HOME/jamulus/distributions/
 
-cd jamulus
+$HOME/jamulus/distributions/build-debian-package-auto.sh
 
-fakeroot dpkg-buildpackage -B
+rm $HOME/jamulus_*.buildinfo
+rm $HOME/jamulus_*.changes
+rm $HOME/jamulus-headless_*.deb
+rm $HOME/jamulus_*.build
 
-cd ~
+sudo dpkg -i $HOME/jamulus_*.deb
 
-rm jamulus_*.buildinfo
-rm jamulus_*.changes
-
-sudo dpkg -i ~/jamulus_*.deb
-
-dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0
+#dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0
