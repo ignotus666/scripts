@@ -6,7 +6,6 @@ $HOME/jamulus/distributions/build-debian-package-auto.sh
 
 rm $HOME/jamulus_*.buildinfo
 rm $HOME/jamulus_*.changes
-rm $HOME/jamulus-headless_*.deb
 rm $HOME/jamulus_*.build
 
 sudo dpkg -i $HOME/jamulus_*.deb
