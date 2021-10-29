@@ -22,9 +22,8 @@ $HOME/jamulus/distributions/build-debian-package-auto.sh
 
 rm $HOME/jamulus_*.buildinfo
 rm $HOME/jamulus_*.changes
-rm $HOME/jamulus-headless_*.deb
 rm $HOME/jamulus_*.build
 
 sudo dpkg -i $HOME/jamulus_*.deb
 
-#dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0
+dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0
