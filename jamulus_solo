@@ -4,8 +4,8 @@
 
 sleep 5
 
-jamulus -s -F -6 &
+jamulus -s -F -6 -T &
 
 sleep 2
 
-jamulus -6 --ctrlmidich "1;30" &
+jamulus -6 --ctrlmidich "1;f30;s2*8;m3*8" &

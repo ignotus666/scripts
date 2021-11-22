@@ -1,0 +1,34 @@
+﻿#!/bin/bash
+
+if [ -d ~/qjackctl ]
+then
+    rm -rf ~/qjackctl
+fi
+
+if [ -f ~/qjackctl_*_amd64.deb ] ; then
+    rm ~/qjackctl_*_amd64.deb
+fi
+
+cd ~
+
+git clone git@github.com:ignotus666/qjackctl.git
+
+cd ~/qjackctl
+
+dpkg-buildpackage -rfakeroot -us -uc -b
+
+cd ~
+
+# rm qjackctl_*.tar.xz
+rm qjackctl_*amd64.buildinfo
+rm qjackctl_*amd64.changes
+rm qjackctl-dbgsym_*_amd64.ddeb
+
+sudo dpkg -i ~/qjackctl_*_amd64.deb
+
+if [ -d ~/qjackctl ]
+then
+    rm -rf ~/qjackctl
+fi
+
+dialog --title "qjackctl installation" --msgbox "qjackctl installed!" 0 0

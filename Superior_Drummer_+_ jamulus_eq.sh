@@ -6,7 +6,7 @@ env WINEPREFIX="$HOME/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Toont
 
 sleep 2
 
-jamulus -s -F &
+jamulus -s -F -T -6 &
 
 #sleep 2
 
