@@ -1,33 +1,33 @@
 ﻿#!/bin/bash
 
-if [ -d ~/po4a ]
+if [ -d $HOME/po4a ]
 then
-    rm -rf ~/po4a
+    rm -rf $HOME/po4a
 fi
 
-if [ -f ~/po4a_*-1.deb ] ; then
-    rm ~/po4a_*-1.deb
+if [ -f $HOME/po4a_*_amd64.deb ] ; then
+    rm $HOME/po4a_*_amd64.deb
 fi
 
-cd ~
+cd $HOME
 
 git clone -b deb-build --single-branch git@github.com:ignotus666/po4a.git
 
-cd ~/po4a
+cd $HOME/po4a
 
 DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -rfakeroot -us -uc -b
 
-cd ~
+cd $HOME
 
 rm po4a_*.tar.xz
 rm po4a_*amd64.buildinfo
 rm po4a_*amd64.changes
 
-sudo dpkg -i ~/po4a_*_amd64.deb
+sudo dpkg -i $HOME/po4a_*_amd64.deb
 
-if [ -d ~/po4a ]
+if [ -d $HOME/po4a ]
 then
-    rm -rf ~/po4a
+    rm -rf $HOME/po4a
 fi
 
 dialog --title "po4a installation" --msgbox "po4a installed!" 0 0
