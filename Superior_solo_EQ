@@ -9,3 +9,8 @@ env WINEPREFIX="$HOME/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Toont
 carla $HOME/carla_projects/superior_drummer_3.carxp &
 
 jack_mixer --config=$HOME/jack_mixer_configs/superior_solo
+
+sleep 40
+
+jack_disconnect 'jack_mixer:superior_in Out L' 'EQ10Q Stereo:Input1'
+jack_disconnect 'jack_mixer:superior_in Out R' 'EQ10Q Stereo:Input2'

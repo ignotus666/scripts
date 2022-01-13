@@ -5,8 +5,8 @@ then
     rm -rf ~/po4a
 fi
 
-if [ -f ~/po4a.deb ] ; then
-    rm ~/po4a.deb
+if [ -f ~/po4a_*-1.deb ] ; then
+    rm ~/po4a_*-1.deb
 fi
 
 cd ~
