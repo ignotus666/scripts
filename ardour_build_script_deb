@@ -1,0 +1,13 @@
+﻿#!/bin/sh
+
+
+if [ -d $HOME/ardour ]
+then
+    rm -rf $HOME/ardour
+fi
+
+cd $HOME/
+
+git clone -b deb-build --single-branch https://github.com/ignotus666/ardour.git
+
+DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -rfakeroot -us -uc -b

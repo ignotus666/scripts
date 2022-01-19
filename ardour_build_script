@@ -10,6 +10,10 @@ cd ~
 
 git clone git://github.com/Ardour/ardour
 
+#sudo apt-get build-dep ardour
+# except debian does not  [yet] list libreadline as build-dependency
+#sudo apt-get install libreadline-dev
+
 cd ardour
 
 ./waf configure --optimize
@@ -17,3 +21,4 @@ cd ardour
 ./waf
 
 sudo ./waf install
+#./gtk2_ardour/ardev
