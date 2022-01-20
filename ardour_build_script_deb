@@ -10,4 +10,6 @@ cd $HOME/
 
 git clone -b deb-build --single-branch https://github.com/ignotus666/ardour.git
 
+cd $HOME/ardour
+
 DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -rfakeroot -us -uc -b
