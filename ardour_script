@@ -4,4 +4,8 @@
 
 sleep 4
 
-ardour6
+cd $HOME/ardour
+
+./gtk2_ardour/ardev
+
+#ardour6

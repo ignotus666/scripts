@@ -1,6 +1,6 @@
 ﻿#!/bin/sh
 
-/usr/bin/qjackctl --preset=superior_solo --active-patchbay=$HOME/jack_patchbays/superior_solo_eq.xml &
+/usr/bin/qjackctl --preset=superior_solo_eq --active-patchbay=$HOME/jack_patchbays/superior_solo_eq.xml &
 
 sleep 2
 
