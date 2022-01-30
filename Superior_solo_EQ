@@ -4,7 +4,7 @@
 
 sleep 2
 
-env WINEPREFIX="$HOME/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Toontrack\\Superior\ Drummer\\Superior\ Drummer\ 3.exe &
+env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Toontrack\\Superior\ Drummer\\Superior\ Drummer\ 3.exe &
 
 carla $HOME/carla_projects/superior_drummer_3.carxp &
 
