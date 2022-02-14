@@ -1,0 +1,12 @@
+﻿#!/bin/sh
+
+if [ -d $HOME/Marlin-2-0-x-Anycubic-i3-MEGA-S ]
+then
+    rm -rf $HOME/Marlin-2-0-x-Anycubic-i3-MEGA-S
+fi
+
+cd $HOME
+
+git clone -b rev-tmc --single-branch https://github.com/ignotus666/Marlin-2-0-x-Anycubic-i3-MEGA-S.git &&
+
+code
