@@ -1,8 +1,8 @@
 ﻿#!/bin/bash
 
-cd $HOME/jamulus/distributions/
+cd $HOME/jamulus/
 
-$HOME/jamulus/distributions/build-debian-package-auto.sh
+$HOME/jamulus/linux/deploy_deb.sh
 
 rm $HOME/jamulus_*.buildinfo
 rm $HOME/jamulus_*.changes

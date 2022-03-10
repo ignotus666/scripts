@@ -18,9 +18,9 @@ git clone https://github.com/jamulussoftware/jamulus.git
 
 cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
 
-cd $HOME/jamulus/distributions/
+cd $HOME/jamulus/
 
-$HOME/jamulus/distributions/build-debian-package-auto.sh
+$HOME/jamulus/linux/deploy_deb.sh
 
 rm $HOME/jamulus_*.buildinfo
 rm $HOME/jamulus_*.changes

@@ -16,9 +16,9 @@ wait 4
 
 git clone -b my-build --single-branch https://github.com/ignotus666/jamulus.git
 
-cd $HOME/jamulus/distributions/
+cd $HOME/jamulus/
 
-$HOME/jamulus/distributions/build-debian-package-auto.sh
+$HOME/jamulus/linux/deploy_deb.sh
 
 rm $HOME/jamulus_*.buildinfo
 rm $HOME/jamulus_*.changes
