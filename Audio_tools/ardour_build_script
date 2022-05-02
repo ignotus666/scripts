@@ -1,12 +1,12 @@
 ﻿#!/bin/sh
 
 
-if [ -d ~/ardour ]
+if [ -d $HOME/ardour ]
 then
-    rm -rf ardour
+    rm -rf $HOME/ardour
 fi
 
-cd ~
+cd $HOME
 
 git clone git://github.com/Ardour/ardour
 

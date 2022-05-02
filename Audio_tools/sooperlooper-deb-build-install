@@ -1,19 +1,19 @@
 ﻿#!/bin/bash
 
-if [ -d ~/sooperlooper ]
+if [ -d $HOME/sooperlooper ]
 then
-    rm -rf ~/sooperlooper
+    rm -rf $HOME/sooperlooper
 fi
 
-if [ -f ~/sooperlooper.deb ] ; then
-    rm ~/sooperlooper.deb
+if [ -f $HOME/sooperlooper.deb ] ; then
+    rm $HOME/sooperlooper.deb
 fi
 
-cd ~
+cd $HOME
 
 git clone -b deb-build --single-branch git@github.com:ignotus666/sooperlooper.git
 
-cd ~/sooperlooper
+cd $HOME/sooperlooper
 
 rm -f ./.gitignore
 rm -f ./.travis.yml
@@ -21,13 +21,13 @@ rm -f ./COPYING
 
 dpkg-deb --build ~/sooperlooper
 
-cd ~
+cd $HOME
 
-sudo dpkg -i ~/sooperlooper.deb
+sudo dpkg -i $HOME/sooperlooper.deb
 
-if [ -d ~/sooperlooper ]
+if [ -d $HOME/sooperlooper ]
 then
-    rm -rf ~/sooperlooper
+    rm -rf $HOME/sooperlooper
 fi
 
 dialog --title "Sooperlooper installation" --msgbox "Sooperlooper installed!" 0 0

@@ -1,19 +1,19 @@
 ﻿#!/bin/bash
 
-if [ -d ~/jack_mixer ]
+if [ -d $HOME/jack_mixer ]
 then
-    rm -rf ~/jack_mixer
+    rm -rf $HOME/jack_mixer
 fi
 
-if [ -f ~/jack-mixer_*.deb ] ; then
-    rm ~/jack-mixer_*.deb
+if [ -f $HOME/jack-mixer_*.deb ] ; then
+    rm $HOME/jack-mixer_*.deb
 fi
 
-cd ~
+cd $HOME
 
 git clone -b deb-build --single-branch git@github.com:ignotus666/jack_mixer.git
 
-cd ~/jack_mixer
+cd $HOME/jack_mixer
 
   if sed -i -e \
      's|import sys$|import sys, sysconfig\nsys.path.insert(0, sysconfig.get_path("purelib"))|' \
@@ -29,18 +29,18 @@ dh_auto_configure --buildsystem=meson
 
 dpkg-buildpackage -rfakeroot -us -uc -b
 
-cd ~
+cd $HOME
 
 rm jack-mixer_*.tar.xz
 rm jack-mixer_*amd64.buildinfo
 rm jack-mixer_*amd64.changes
 rm jack-mixer-dbgsym_*.ddeb
 
-sudo dpkg -i ~/jack-mixer_*.deb
+sudo dpkg -i $HOME/jack-mixer_*.deb
 
-if [ -d ~/jack_mixer ]
+if [ -d $HOME/jack_mixer ]
 then
-    rm -rf ~/jack_mixer
+    rm -rf $HOME/jack_mixer
 fi
 
 echo ''
