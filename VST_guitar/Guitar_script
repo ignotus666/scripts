@@ -4,7 +4,7 @@
 
 sleep 2
 
-env WINEPREFIX="$HOME/.wine" /opt/wine-stable/bin/wine C:\\Program\ Files\\Overloud\\TH-U\\TH-U-64.exe &
+env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Overloud\\TH-U\ Slate\ Edition\\TH-U\ Slate-64.exe &
 
 carla $HOME/carla_projects/guitar_THU.carxp &
 

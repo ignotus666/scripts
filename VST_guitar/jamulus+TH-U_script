@@ -4,6 +4,9 @@
 
 sleep 5
 
+
+env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Overloud\\TH-U\ Slate\ Edition\\TH-U\ Slate-64.exe &
+
 jamulus -s -F &
 
 sleep 2
@@ -12,14 +15,12 @@ jamulus --ctrlmidich "1;70" &
 
 sleep 2
 
-env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Overloud\\TH-U\\TH-U-64.exe  &
-
 
 jack_mixer --config=$HOME/jack_mixer_configs/Guitar &
 
-sleep 15
+sleep 5
 
-jack_disconnect TH-U-64:out_1 system:playback_1
-jack_disconnect TH-U-64:out_2 system:playback_2
+#jack_disconnect 'TH-U Slate-64:out_1' system:playback_1
+#jack_disconnect 'TH-U Slate-64:out_2' system:playback_2
 jack_disconnect system:capture_1 'Jamulus:input left'
 jack_disconnect system:capture_2 'Jamulus:input right'

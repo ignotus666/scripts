@@ -1,0 +1,14 @@
+﻿#!/bin/sh
+
+if [ -d $HOME/klipper-led_effect ]
+then
+    rm -rf $HOME/klipper-led_effect
+fi
+
+cd $HOME
+
+git clone https://github.com/julianschill/klipper-led_effect.git
+
+cd $HOME/klipper-led_effect
+
+./install-led_effect.sh
