@@ -16,7 +16,7 @@ wait 4
 
 git clone https://github.com/jamulussoftware/jamulus.git
 
-cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
+#cp  -r ~/imágenes/jamulus_pngs/*.png ~/jamulus/src/res/
 
 cd $HOME/jamulus/
 

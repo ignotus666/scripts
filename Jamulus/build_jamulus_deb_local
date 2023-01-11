@@ -1,13 +1,18 @@
 ﻿#!/bin/bash
 
-cd $HOME/jamulus/
+cd $HOME/jamulus_app/jamulus
 
-$HOME/jamulus/linux/deploy_deb.sh
+if [ -f $HOME/jamulus_app/jamulus_*.deb ]
+then
+    rm $HOME/jamulus_app/jamulus_*.deb
+fi
 
-rm $HOME/jamulus_*.buildinfo
-rm $HOME/jamulus_*.changes
-rm $HOME/jamulus_*.build
+$HOME/jamulus_app/jamulus/linux/deploy_deb.sh
 
-sudo dpkg -i $HOME/jamulus_*.deb
+rm $HOME/jamulus_app/jamulus_*.buildinfo
+rm $HOME/jamulus_app/jamulus_*.changes
+rm $HOME/jamulus_app/jamulus_*.build
+
+sudo dpkg -i $HOME/jamulus_app/jamulus_*.deb
 
 dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0

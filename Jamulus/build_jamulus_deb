@@ -1,29 +1,29 @@
 ﻿#!/bin/bash
 
-if [ -d $HOME/jamulus ]
+if [ -d $HOME/jamulus_app/jamulus ]
 then
-    rm -rf $HOME/jamulus
+    rm -rf $HOME/jamulus_app/jamulus
 fi
 
-if [ -f $HOME/jamulus_*.deb ]
+if [ -f $HOME/jamulus_app/jamulus_*.deb ]
 then
-    rm $HOME/jamulus_*.deb
+    rm $HOME/jamulus_app/jamulus_*.deb
 fi
 
-cd $HOME
+cd $HOME/jamulus_app/
 
 wait 4
 
 git clone -b my-build --single-branch https://github.com/ignotus666/jamulus.git
 
-cd $HOME/jamulus/
+cd $HOME/jamulus_app/jamulus/
 
-$HOME/jamulus/linux/deploy_deb.sh
+$HOME/jamulus_app/jamulus/linux/deploy_deb.sh
 
-rm $HOME/jamulus_*.buildinfo
-rm $HOME/jamulus_*.changes
-rm $HOME/jamulus_*.build
+rm $HOME/jamulus_app/jamulus_*.buildinfo
+rm $HOME/jamulus_app/jamulus_*.changes
+rm $HOME/jamulus_app/jamulus_*.build
 
-sudo dpkg -i $HOME/jamulus_*.deb
+sudo dpkg -i $HOME/jamulus_app/jamulus_*.deb
 
 dialog --title "Jamulus installation" --msgbox "Jamulus installed!" 0 0

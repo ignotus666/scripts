@@ -1,0 +1,10 @@
+﻿#!/bin/sh
+
+if [ -d $HOME/jamulus ]
+then
+    rm -rf $HOME/jamulus
+fi
+
+cd $HOME/
+
+git clone https://github.com/ignotus666/jamulus.git

@@ -8,4 +8,4 @@ jamulus -s -F -T &
 
 sleep 2
 
-jamulus --ctrlmidich "0;o2" &
+jamulus --ctrlmidich "0;f30*8;o2" &

@@ -1,0 +1,10 @@
+﻿#!/bin/sh
+
+if [ -d $HOME/jamulus_web_mine/jamuluswebsite ]
+then
+    rm -rf $HOME/jamulus_web_mine/jamuluswebsite
+fi
+
+cd $HOME/jamulus_web_mine
+
+git clone  -b next-release --single-branch https://github.com/ignotus666/jamuluswebsite.git
