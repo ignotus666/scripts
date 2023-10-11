@@ -38,10 +38,10 @@ rm jack-mixer-dbgsym_*.ddeb
 
 sudo dpkg -i $HOME/jack-mixer_*.deb
 
-if [ -d $HOME/jack_mixer ]
-then
-    rm -rf $HOME/jack_mixer
-fi
+#if [ -d $HOME/jack_mixer ]
+#then
+#    rm -rf $HOME/jack_mixer
+#fi
 
 echo ''
 echo "Jack-Mixer installed!"

@@ -8,7 +8,7 @@ env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Over
 
 carla $HOME/carla_projects/guitar_THU.carxp &
 
-slgui --load-session=$HOME/pedalboard.slsess &
+slgui --load-session=$HOME/sooperlooper_presets/pedalboard.slsess &
 
 jack_mixer --config=$HOME/jack_mixer_configs/Guitar &
 

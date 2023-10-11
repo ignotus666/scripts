@@ -15,15 +15,25 @@ git clone -b deb-build --single-branch git@github.com:ignotus666/sooperlooper.gi
 
 cd $HOME/sooperlooper
 
-rm -f ./.gitignore
-rm -f ./.travis.yml
-rm -f ./COPYING
+$HOME/sooperlooper/autogen.sh
 
-dpkg-deb --build ~/sooperlooper
+$HOME/sooperlooper/configure
 
-cd $HOME
+make
 
-sudo dpkg -i $HOME/sooperlooper.deb
+sudo make install
+
+#rm -f ./.gitignore
+#rm -f ./.travis.yml
+#rm -f ./COPYING
+
+
+
+#dpkg-deb --build $HOME/sooperlooper
+
+#cd $HOME
+
+#sudo dpkg -i $HOME/sooperlooper.deb
 
 if [ -d $HOME/sooperlooper ]
 then

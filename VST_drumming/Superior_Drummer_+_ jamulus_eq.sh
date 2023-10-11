@@ -2,7 +2,7 @@
 
 /usr/bin/qjackctl --preset=superior_drummer_eq --active-patchbay=$HOME/jack_patchbays/jamulus+superior_eq.xml &
 
-env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Toontrack\\Superior\ Drummer\\Superior\ Drummer\ 3.exe &
+#env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Toontrack\\Superior\ Drummer\\Superior\ Drummer\ 3.exe &
 
 sleep 2
 
