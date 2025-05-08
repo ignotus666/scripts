@@ -1,0 +1,12 @@
+﻿#!/bin/bash
+
+
+cd $HOME/po4a
+
+DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -rfakeroot -us -uc -b
+
+cd $HOME
+
+rm po4a_*.tar.xz
+rm po4a_*amd64.buildinfo
+rm po4a_*amd64.changes

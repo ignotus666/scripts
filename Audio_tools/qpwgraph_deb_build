@@ -1,0 +1,41 @@
+﻿#!/bin/bash
+
+if [ -d $HOME/qpwgraph ]
+then
+    rm -rf $HOME/qpwgraph
+fi
+
+if [ -f $HOME/qpwgraph_*.deb ] ; then
+    rm $HOME/qpwgraph_*.deb
+fi
+
+git clone https://github.com/rncbc/qpwgraph
+
+
+cd $HOME/qpwgraph
+
+
+cmake -DCONFIG_ALSA_MIDI=1
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local -B build
+
+cmake --build build --parallel 2
+
+dpkg-buildpackage -rfakeroot -us -uc -b
+
+cd $HOME
+
+rm qpwgraph_*.tar.xz
+rm qpwgraph_*amd64.buildinfo
+rm qpwgraph_*amd64.changes
+rm qpwgraph-dbgsym_*.ddeb
+
+sudo dpkg -i $HOME/qpwgraph_*.deb
+
+#if [ -d $HOME/jack_mixer ]
+#then
+#    rm -rf $HOME/jack_mixer
+#fi
+
+echo ''
+echo "qpwgraph installed!"

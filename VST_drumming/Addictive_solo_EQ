@@ -7,9 +7,9 @@ $HOME/scripts/misc/SMT_performance_on.sh &
 pw-metadata -n settings 0 clock.force-quantum 48 &
 pw-metadata -n settings 0 clock.force-rate 48000 &
 
-carla $HOME/carla_projects/superior_drummer_3.carxp &
+carla $HOME/carla_projects/addictive_drums_2.carxp &
 
-qpwgraph -a -x -m $HOME/qpwgraph_patchbays/Pipewire_SD_solo_EQ.qpwgraph &
+qpwgraph -a -x -m $HOME/qpwgraph_patchbays/Pipewire_AD_solo_EQ.qpwgraph &
 
 pactl set-sink-volume @DEFAULT_SINK@ 100% &
 
@@ -19,8 +19,8 @@ jack_mixer --config=$HOME/jack_mixer_configs/drums_solo &&
 
 pw-metadata -n settings 0 clock.force-quantum 512 &&
 
-pactl set-sink-mute @DEFAULT_SINK@ 1 &&
+qpwgraph -d -n -m $HOME/qpwgraph_patchbays/Pipewire_AD_solo_EQ.qpwgraph &&
 
-qpwgraph -d -n -m $HOME/qpwgraph_patchbays/Pipewire_SD_solo_EQ.qpwgraph &&
+pactl set-sink-mute @DEFAULT_SINK@ 1 &&
 
 sudo $HOME/scripts/misc/smt-manager.pl --online; sudo cpupower-gui pr Schedutil

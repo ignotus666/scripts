@@ -1,8 +1,8 @@
 ﻿#!/bin/sh
 
-/usr/bin/qjackctl --preset=ardour &
+#/usr/bin/qjackctl --preset=ardour &
 
-sleep 4
+#sleep 4
 
 cd $HOME/ardour
 

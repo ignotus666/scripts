@@ -1,0 +1,5 @@
+﻿#!/bin/bash
+
+sudo apt-get purge -y bluez &&
+
+sudo apt install bluez blueman

@@ -1,19 +1,8 @@
 ﻿#!/bin/bash
 
-if [ -d $HOME/jack_mixer ]
-then
-    rm -rf $HOME/jack_mixer
-fi
 
-if [ -f $HOME/jack-mixer_*.deb ] ; then
-    rm $HOME/jack-mixer_*.deb
-fi
 
-cd $HOME
-
-git clone -b deb-build --single-branch git@github.com:ignotus666/jack_mixer.git
-
-cd $HOME/jack_mixer
+cd $HOME/jack_mixer-release-19
 
   if sed -i -e \
      's|import sys$|import sys, sysconfig\nsys.path.insert(0, sysconfig.get_path("purelib"))|' \

@@ -1,0 +1,18 @@
+﻿#!/bin/sh
+
+/usr/bin/qjackctl --preset=Guitar --active-patchbay=$HOME/jack_patchbays/guitar_eq.xml &
+
+sleep 2
+
+env WINEPREFIX="$HOME/.wine" /opt/wine-staging/bin/wine C:\\Program\ Files\\Overloud\\TH-U\ Slate\ Edition\\TH-U\ Slate-64.exe &
+
+carla $HOME/carla_projects/guitar_THU.carxp &
+
+slgui --load-session=$HOME/sooperlooper_presets/pedalboard.slsess &
+
+jack_mixer --config=$HOME/jack_mixer_configs/Guitar &
+
+#sleep 5
+
+#jack_disconnect TH-U-64:out_1 system:playback_1 &
+#jack_disconnect TH-U-64:out_2 system:playback_2
